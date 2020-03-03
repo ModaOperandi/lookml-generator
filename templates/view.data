@@ -1,0 +1,62 @@
+view: {{lookerView}} {
+  derived_table: {
+    sql: SELECT * FROM LOOKER.{{tableName}}
+       WHERE SRX = TRUE;;
+  }
+  drill_fields: [event_id]
+
+  dimension: event_id {
+    type: string
+    sql: ${TABLE}."ID" ;;
+  }
+
+  # Properties
+
+{{properties}}
+
+  dimension: received_at {
+    type: date_time
+    sql: ${TABLE}."RECEIVED_AT" ;;
+  }
+
+  dimension: timestamp {
+    type: date_time
+    sql: ${TABLE}."TIMESTAMP" ;;
+  }
+
+  # Groupings
+
+  dimension_group: received_at_group {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}."RECEIVED_AT" ;;
+  }
+
+  dimension_group: timestamp_group {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}."TIMESTAMP" ;;
+  }
+
+  # Measures
+
+  measure: count {
+    type: count
+  }
+}

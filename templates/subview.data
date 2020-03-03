@@ -1,0 +1,29 @@
+view: {{lookerView}}_{{lookerViewSuffix}} {
+  derived_table: {
+    sql: SELECT t.ID,
+       {{jsonSelectFields}}
+       FROM LOOKER.{{tableName}} t,
+       LATERAL FLATTEN(input => TRY_PARSE_JSON(t.{{parentField}})) AS JF
+       WHERE SRX = TRUE;;
+  }
+  drill_fields: [event_id]
+
+  dimension: event_id {
+    type: string
+    sql: ${TABLE}."ID" ;;
+  }
+
+  # Properties
+
+{{properties}}
+
+  # Measures
+
+  measure: count {
+    type: count
+    drill_fields: [detail*]
+  }
+
+  # Sets of fields for drilling
+
+}

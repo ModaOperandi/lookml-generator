@@ -1,0 +1,4 @@
+  dimension: {{lookerField}} {
+    type: {{type}}
+    sql: ${TABLE}."{{tableField}}";;
+  }
