@@ -1,3 +1,5 @@
+import sys
+
 PRODUCTS_KEY = 'products'
 
 SRX_MODE = 'srx'
