@@ -1,3 +1,4 @@
 input/*.json
 **/__pycache__
 **/*.lkml
+**/.DS_Store

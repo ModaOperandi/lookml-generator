@@ -47,12 +47,16 @@ def main():
     # Create the processor
     try:
         processor = LookMLProcessor(input_json, config)
+        mode = config['operationMode']
 
         # Process the data!
-        processor.process()
+        if mode == 'srx':
+            processor.process_srx()
+        elif mode == 'table':
+            processor.process_table()
 
         print('LookML files written successfully.')
     except ConverterException as e:
-        print('Error in processing.', file=sys.stderr)
+        print('Error in processing: {}'.format(e), file=sys.stderr)
 
 main()

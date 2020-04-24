@@ -1,0 +1,15 @@
+view: {{lookerView}} {
+  derived_table: {
+    sql: SELECT * FROM LOOKER.{{tableName}};;
+  }
+
+  # Fields
+
+{{fields}}
+
+  # Measures
+
+  measure: count {
+    type: count
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "inputFile": "input/table_test.json",
+    "outputFileExtension": "lkml",
+    "viewTemplate": "templates/table/view.data",
+    "propertyTemplate": "templates/property.data",
+    "operationMode": "table"
+}

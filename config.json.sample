@@ -1,8 +1,0 @@
-{
-    "inputFile": "input/product_added.json",
-    "table": "PRODUCT_ADDED",
-    "outputFileExtension": "lkml",
-    "viewTemplate": "templates/view.data",
-    "subviewTemplate": "templates/subview.data",
-    "propertyTemplate": "templates/property.data"
-}

@@ -1,0 +1,9 @@
+{
+    "inputFile": "input/product_added.json",
+    "table": "PRODUCT_ADDED",
+    "outputFileExtension": "lkml",
+    "viewTemplate": "templates/srx/view.data",
+    "subviewTemplate": "templates/srx/subview.data",
+    "propertyTemplate": "templates/property.data",
+    "operationMode": "srx"
+}
